@@ -9,13 +9,15 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:voxcube-viewer.showWelcome"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "voxcube-viewer.helloWorld",
-        "title": "Hello World"
+        "command": "voxcube-viewer.showWelcome",
+        "title": "VoxCube: Показать приветствие"
       }
     ]
   },
