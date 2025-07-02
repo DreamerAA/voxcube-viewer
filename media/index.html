@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>VoxCube</title>
+    <style>
+        input {
+            width: 60px;
+            margin-right: 4px;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        body {
+            font-family: sans-serif;
+            padding: 16px;
+        }
+
+        canvas {
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            image-rendering: pixelated;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>VoxCube Viewer</h2>
+    <button id="selectRaw">📂 Загрузить .raw файл</button>
+    <p id="filePath"></p>
+
+    <div>
+        <label>Размеры:</label>
+        X <input id="dimX" type="number" value="300">
+        Y <input id="dimY" type="number" value="300">
+        Z <input id="dimZ" type="number" value="300">
+        <button id="loadRaw">📦 Загрузить данные</button>
+    </div>
+
+    <div>
+        <label>Тип данных:</label>
+        <select id="dtype">
+            <option value="uint8">uint8 (1 байт)</option>
+            <option value="int16">int16 (2 байта)</option>
+            <option value="float32">float32 (4 байта)</option>
+        </select>
+    </div>
+
+    <div id="slicer" style="display:none">
+        Срез по Z: <input type="range" id="zSlider" min="0" max="299" value="0" />
+        <span id="zValue">0</span>
+        <canvas id="sliceCanvas" width="300" height="300"></canvas>
+    </div>
+
+    <button id="checkSize">✅ Проверить размер</button>
+    <p id="checkResult"></p>
+
+    <script src="./viewer.js"></script>
+</body>
+
+</html>
